@@ -1,0 +1,74 @@
+<html>   
+   <head>
+      <title>Form Validation</title>      
+      <script type = "text/javascript">
+         <!--
+            function validate() {
+      
+         if( document.myForm.Name.value == "" ) {
+            alert( "Nama belum dimasukan" );
+            document.myForm.Name.focus() ;
+            return false;
+         }
+         if( document.myForm.EMail.value == "" ) {
+            alert( "Email belum dimasukan" );
+            document.myForm.EMail.focus() ;
+            return false;
+         }
+         if( document.myForm.Zip.value == "" || isNaN( document.myForm.Zip.value ) ||
+            document.myForm.Zip.value.length != 5 ) {
+            
+            alert( "Kode POS belum dimasukan" );
+            document.myForm.Zip.focus() ;
+            return false;
+         }
+         if( document.myForm.Country.value == "-1" ) {
+            alert( "Negara belum dimasukan" );
+            return false;
+         }
+         return( true );
+      }
+         //-->
+      </script>      
+   </head>
+   
+   <body>
+      <form action = "/cgi-bin/test.cgi" name = "myForm" onsubmit = "return(validate());">
+         <table cellspacing = "2" cellpadding = "2" border = "1">
+            
+            <tr>
+               <td align = "right">Nama</td>
+               <td><input type = "text" name = "Name" /></td>
+            </tr>
+            
+            <tr>
+               <td align = "right">Email</td>
+               <td><input type = "text" name = "EMail" /></td>
+            </tr>
+            
+            <tr>
+               <td align = "right">Kode POS</td>
+               <td><input type = "text" name = "Zip" /></td>
+            </tr>
+            
+            <tr>
+               <td align = "right">Negara</td>
+               <td>
+                  <select name = "Country">
+                     <option value = "-1" selected>[choose yours]</option>
+                     <option value = "1">Indonesia</option>
+                     <option value = "2">Malaysia</option>
+                     <option value = "3">Singapura</option>
+                  </select>
+               </td>
+            </tr>
+            
+            <tr>
+               <td align = "right"></td>
+               <td><input type = "submit" value = "Submit" /></td>
+            </tr>
+            
+         </table>
+      </form>      
+   </body>
+</html>
